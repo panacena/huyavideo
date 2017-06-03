@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/game_head_view_min_height"
+        android:background="#fffe7053">
+
+        <LinearLayout
+            android:id="@+id/ll_back"
+            android:layout_width="60.0dip"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/title_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="13.0dip"
+                android:contentDescription="@null"
+                android:src="@drawable/back_icon"/>
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/tabs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/tab_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tab_left"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="直播"
+                android:textColor="@color/tab"
+                android:textSize="16.0sp"/>
+
+            <RadioButton
+                android:id="@+id/tab_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tab_right"
+                android:button="@null"
+                android:gravity="center"
+                android:text="视频"
+                android:textColor="@color/tab"
+                android:textSize="16.0sp"/>
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center|right"
+            android:contentDescription="@null"
+            android:gravity="center"
+            android:paddingRight="19.0dip"
+            android:src="@drawable/search_icon"/>
+    </RelativeLayout>
+
+    <ViewPager
+        android:id="@+id/mainViewPager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+</LinearLayout>

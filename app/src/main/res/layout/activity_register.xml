@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="fill_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:background="@android:color/white"
+                  android:focusable="true"
+                  android:focusableInTouchMode="true"
+                  android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48.0dip"
+            android:background="#fff6f6f6">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:paddingBottom="5.0dip"
+                android:paddingLeft="20.0dip"
+                android:paddingTop="5.0dip"
+                android:src="@drawable/arrow_back"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="注册"
+                android:textColor="#ffff5000"
+                android:textSize="19.0dip"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28.0dip"
+            android:layout_marginRight="28.0dip"
+            android:layout_marginTop="23.0dip"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_phone_black"
+                android:drawablePadding="12.0dip"
+                android:hint="手机号"
+                android:inputType="phone"
+                android:maxLength="11"
+                android:paddingBottom="9.0dip"
+                android:paddingTop="9.0dip"
+                android:textColor="@android:color/black"
+                android:textColorHint="#ffbbbbbb"/>
+
+            <ImageView
+                android:id="@+id/iv_phone_del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/tv_get_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10.0dip"
+                android:layout_weight="0.0"
+                android:background="@drawable/get_code_background"
+                android:text="获取验证码"
+                android:textColor="#ffff5000"
+                android:textSize="14.0sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_marginLeft="28.0dip"
+            android:layout_marginRight="28.0dip"
+            android:background="#fff8f8f8"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28.0dip"
+            android:layout_marginRight="28.0dip"
+            android:layout_marginTop="32.0dip"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/et_code"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_code"
+                android:drawablePadding="12.0dip"
+                android:hint="验证码"
+                android:inputType="number"
+                android:paddingBottom="9.0dip"
+                android:paddingTop="9.0dip"
+                android:textColor="@android:color/black"
+                android:textColorHint="#ffbbbbbb"/>
+
+            <ImageView
+                android:id="@+id/iv_code_del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_marginLeft="28.0dip"
+            android:layout_marginRight="28.0dip"
+            android:background="#fff8f8f8"/>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28.0dip"
+            android:layout_marginRight="28.0dip"
+            android:layout_marginTop="32.0dip"
+            android:gravity="center_vertical">
+
+            <EditText
+                android:id="@+id/et_pwd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.0"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_pwd"
+                android:drawablePadding="12.0dip"
+                android:hint="密码"
+                android:inputType="textPassword"
+                android:paddingBottom="9.0dip"
+                android:paddingTop="9.0dip"
+                android:textColor="@android:color/black"
+                android:textColorHint="#ffbbbbbb"/>
+
+            <ImageView
+                android:id="@+id/iv_pwd_del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:src="@drawable/ic_delete"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_marginLeft="28.0dip"
+            android:layout_marginRight="28.0dip"
+            android:background="#fff8f8f8"/>
+
+        <LinearLayout
+            android:id="@+id/ll_agreement"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28.0dip"
+            android:layout_marginTop="15.0dip">
+
+            <CheckBox
+                android:id="@+id/cb_read"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@drawable/ic_read_selector"
+                android:checked="true"/>
+
+            <TextView
+                android:id="@+id/tv_read"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7.0dip"
+                android:text="已同意"
+                android:textColor="#ffbbbbbb"
+                android:textSize="13.0sp"/>
+
+            <TextView
+                android:id="@+id/tv_aggrement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7.0dip"
+                android:text="直播服务使用协议"
+                android:textColor="#ff666666"
+                android:textSize="13.0sp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28.0dip"
+            android:layout_marginRight="28.0dip"
+            android:layout_marginTop="35.0dip"
+            android:background="@drawable/login_btn_background"
+            android:padding="15.0dip"
+            android:text="注册"
+            android:textColor="@android:color/white"
+            android:textSize="17.0sp"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="50.0dip"
+        android:layout_height="50.0dip"
+        android:layout_gravity="center"
+        android:indeterminateDrawable="@drawable/loading_xml"/>
+</FrameLayout>

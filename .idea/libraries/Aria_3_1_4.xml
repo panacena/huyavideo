@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Aria-3.1.4">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.arialyy.aria/Aria/3.1.4/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.arialyy.aria/Aria/3.1.4/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.arialyy.aria/Aria/3.1.4/66935a22af4816acda173e7fcd3ab67518c496b0/Aria-3.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

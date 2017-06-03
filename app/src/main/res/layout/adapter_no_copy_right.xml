@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="10.0dip">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_cover_image"
+        android:layout_width="fill_parent"
+        android:layout_height="125.0dip"
+        app:actualImageScaleType="fitXY"
+        app:placeholderImage="@drawable/loading_icon_default"
+        app:placeholderImageScaleType="fitXY"
+        app:viewAspectRatio="1.0"/>
+
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5.0dip"
+        android:layout_marginTop="10.0dip"
+        android:drawableLeft="@drawable/ic_live"
+        android:gravity="center_vertical"
+        android:text="直播中"
+        android:textColor="#ffffffff"
+        android:textSize="12.0sp"/>
+
+    <TextView
+        android:id="@+id/tv_platform"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_cover_image"
+        android:layout_alignLeft="@+id/iv_cover_image"
+        android:layout_marginBottom="8.0dip"
+        android:layout_marginLeft="8.0dip"
+        android:layout_marginTop="5.0dip"
+        android:gravity="center_vertical"
+        android:text="斗鱼"
+        android:textColor="#ffffffff"
+        android:textSize="11.0sp"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tv_platform"
+        android:layout_alignLeft="@+id/iv_cover_image"
+        android:layout_marginLeft="8.0dip"
+        android:gravity="center_vertical"
+        android:text="文森特，震撼来袭"
+        android:textColor="#ffffffff"
+        android:textSize="16.0sp"/>
+
+    <TextView
+        android:id="@+id/tv_gamename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_cover_image"
+        android:layout_alignRight="@+id/iv_cover_image"
+        android:layout_marginBottom="8.0dip"
+        android:layout_marginRight="8.0dip"
+        android:layout_marginTop="5.0dip"
+        android:gravity="center_vertical"
+        android:text="英雄联盟"
+        android:textColor="#ffffffff"
+        android:textSize="11.0sp"/>
+</RelativeLayout>
