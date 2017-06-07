@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "video.zkk.com.huyavideo"
-        minSdkVersion 9
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -25,27 +25,56 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
-    testCompile 'junit:junit:4.12'
 
+    compile 'com.android.support:design:25.3.1'
 
-
-    /**
+    /*
      * 图片加载
      * https://www.fresco-cn.org/docs/index.html
      */
     compile 'com.facebook.fresco:fresco:0.12.0'
 
-    /**
+    /*
      * 网络请求
      * https://github.com/hongyangAndroid/okhttputils
      */
     compile 'com.zhy:okhttputils:2.6.2'
 
-    /**
+    /*
      * Aria  文件下载
      *  https://github.com/AriaLyy/Aria
      */
     compile 'com.arialyy.aria:Aria:3.1.4'
 
 
+
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+
+
+    /*
+     *  viewpaper 滑动指示器
+     * https://github.com/hackware1993/MagicIndicator
+    */
+    compile 'com.github.hackware1993:MagicIndicator:1.5.0'
+
+
+
+    /*
+     *  RecyclerView或者Gridview、Listview 加载更多
+     *  https://github.com/Aspsine/SwipeToLoadLayout
+     */
+    compile 'com.github.Aspsine:SwipeToLoadLayout:1.0.4'
+
+
+    compile 'com.alibaba:fastjson:1.1.57.android'
+
+    compile 'com.dou361.ijkplayer:jjdxm-ijkplayer:1.0.5'
+
+     compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.6.0'
+     compile 'tv.danmaku.ijk.media:ijkplayer-arm64:0.6.0'  //最小版本21
+     compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.6.0'
+     compile 'tv.danmaku.ijk.media:ijkplayer-x86_64:0.6.0'  //最小版本21
+
+    compile 'com.github.bumptech.glide:glide:4.0.0-RC0'
 }

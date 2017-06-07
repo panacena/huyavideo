@@ -4,4 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="game_head_view_min_height">48.0dip</dimen>
+
+    <dimen name="navigation_bar_height">50.0dip</dimen>
 </resources>
