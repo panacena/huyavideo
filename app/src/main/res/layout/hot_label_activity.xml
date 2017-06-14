@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_f5f5f5">
+
+    <RelativeLayout
+        android:id="@+id/activity_hot_label"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/classify_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_19"
+            android:text="@string/my_classify_text"
+            android:textColor="@color/color_383838"
+            android:textSize="@dimen/sp_15"/>
+
+        <TextView
+            android:id="@+id/fouce_label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/classify_label"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_2"
+            android:text="@string/drag_text"
+            android:textColor="@color/color_9c9c9c"
+            android:textSize="@dimen/sp_10"/>
+
+        <TextView
+            android:id="@+id/edit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_16_3"
+            android:layout_marginTop="@dimen/dp_24_3"
+            android:background="@drawable/shape_edit_btn"
+            android:text="@string/personal_edit_text"
+            android:textColor="@color/color_fe362d"
+            android:textSize="@dimen/sp_12"/>
+
+        <GridView
+            android:id="@+id/drag_gridView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/classify_label"
+            android:layout_marginLeft="12.0dip"
+            android:layout_marginRight="12.0dip"
+            android:layout_marginTop="@dimen/dp_31_7"
+            android:numColumns="4"/>
+
+        <TextView
+            android:id="@+id/classify_recommend_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/drag_gridView"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_19"
+            android:text="@string/classify_recommend_text"
+            android:textColor="@color/color_383838"
+            android:textSize="@dimen/sp_15"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/classify_recommend_label"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_2"
+            android:text="@string/add_label_text"
+            android:textColor="@color/color_9c9c9c"
+            android:textSize="@dimen/sp_10"/>
+
+        <GridView
+            android:id="@+id/recommend_gridview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/classify_recommend_label"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginRight="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_31_7"
+            android:numColumns="4"
+            android:scrollbars="none"/>
+    </RelativeLayout>
+</ScrollView>

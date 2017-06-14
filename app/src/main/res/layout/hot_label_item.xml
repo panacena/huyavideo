@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="fill_parent"
+             android:layout_height="wrap_content"
+             android:background="@color/transparent">
+
+    <LinearLayout
+        android:id="@+id/layout_item"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="@dimen/dp_2"
+        android:background="@drawable/shape_label_item"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/label_img"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:textColor="@color/color_383838"
+            android:textSize="@dimen/sp_13_3"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_delete"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_gravity="center|right|top">
+
+        <ImageView
+            android:id="@+id/delete_btn"
+            android:layout_width="@dimen/dp_17_3"
+            android:layout_height="@dimen/dp_17_3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            />
+        <!--android:src="@drawable/hot_label_delete_btn"-->
+    </RelativeLayout>
+</FrameLayout>

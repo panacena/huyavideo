@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">HuYaVideo</string>
+
+
+
+    <string name="drag_text">长按即可拖动分类</string>
+    <string name="personal_edit_text">编辑</string>
+    <string name="classify_recommend_text">分类推荐</string>
+    <string name="add_label_text">点击即可加入分类</string>
+
+    <string name="my_classify_text">我的分类</string>
+
 </resources>

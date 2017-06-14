@@ -15,4 +15,14 @@
     <color name="black_info_title">#ff545454</color>
     <color name="white2">#fff6f6f6</color>
     <color name="gray_color">#aadadada</color>
+
+
+    <color name="color_white">#ffffffff</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_383838">#ff383838</color>
+
+
+    <color name="color_fe362d">#fffe362d</color>
+    <color name="color_f5f5f5">#fff5f5f5</color>
+    <color name="color_9c9c9c">#ff9c9c9c</color>
 </resources>

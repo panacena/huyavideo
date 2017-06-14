@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white">
+
+
+    <FrameLayout
+        android:id="@+id/frame_container"
+        android:layout_width="match_parent"
+        android:layout_above="@+id/view_layout1"
+        android:layout_height="match_parent"/>
+
+    <View
+        android:layout_above="@+id/navigation_layout"
+        android:id="@+id/view_layout1"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:background="@color/nav_divider" />
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/navigation_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/navigation_bar_height"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/navigation_bar_home"
+            style="@style/NavigationBar.Btn"
+            android:drawableTop="@drawable/navigation_bar_home_selector"
+            android:text="视频" />
+
+        <Button
+            android:id="@+id/navigation_bar_like"
+            style="@style/NavigationBar.Btn"
+            android:drawableTop="@drawable/navigation_bar_like_selector"
+            android:text="喜欢" />
+
+        <Button
+            android:id="@+id/navigation_bar_my"
+            style="@style/NavigationBar.Btn"
+            android:drawableTop="@drawable/navigation_bar_my_selector"
+            android:text="我的" />
+    </LinearLayout>
+</RelativeLayout>
