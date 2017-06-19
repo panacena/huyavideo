@@ -23,6 +23,15 @@ public class Api {
 
 
     public   static String  SmallVideo="https://apiv2.douyucdn.cn/video/ShortVideo/getTopicVideoList?tid=2&limit=20&client_sys=android";
+    public   static String  YuLeVideo2="https://apiv2.douyucdn.cn/video/ShortVideo/getCateVideoList?cid=14&limit=20&client_sys=android";
+
+
+    public   static String  YuLeVideo="https://v.douyu.com/video/shortvideo/listAjax?limit=50&page=1&uid=0&type=tag&id=14";
+
+
+
+    public   static String  ShengHuoYuLeWuDao="https://apiv2.douyucdn.cn/Video/Video/getCate2VideoList1?cate2_id=18&limit=20&action=hot&client_sys=android";
+
 
 
     public   static String  SmallVideoUrl="https://vmobile.douyu.com/video/getInfo";

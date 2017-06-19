@@ -63,12 +63,12 @@ public class SmallVideoFragment extends Fragment {
         ButterKnife.bind(this, view);
 
 
-        mFragmentList.add(new RecommendFragment());
-        mFragmentList.add(new RecommendFragment());
-        mFragmentList.add(new RecommendFragment());
-        mFragmentList.add(new RecommendFragment());
-        mFragmentList.add(new RecommendFragment());
-        mFragmentList.add(new RecommendFragment());
+        mFragmentList.add(RecommendFragment.newInstance(0));
+        mFragmentList.add(RecommendFragment.newInstance(1));
+        mFragmentList.add(new ShengHuoYuLeFragment());
+        mFragmentList.add(RecommendFragment.newInstance(1));
+        mFragmentList.add(RecommendFragment.newInstance(1));
+        mFragmentList.add(RecommendFragment.newInstance(1));
 
         smallVideoFragmentAdapter=new SmallVideoFragmentAdapter(getFragmentManager());
         mViewPager.setAdapter(smallVideoFragmentAdapter);

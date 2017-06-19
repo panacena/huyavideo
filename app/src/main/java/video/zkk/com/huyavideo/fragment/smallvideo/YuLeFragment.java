@@ -27,41 +27,40 @@ import okhttp3.Call;
 import video.zkk.com.huyavideo.R;
 import video.zkk.com.huyavideo.activity.smallvideo.SmallVideoActivity;
 import video.zkk.com.huyavideo.adapter.smallvideo.SmallVideoAdapter;
+import video.zkk.com.huyavideo.adapter.smallvideo.YuLeAdapter;
 import video.zkk.com.huyavideo.api.Api;
 import video.zkk.com.huyavideo.bean.smallvideo.SmallVideoBean;
+import video.zkk.com.huyavideo.bean.smallvideo.YuLeBean;
 import video.zkk.com.huyavideo.widget.LoadMoreFootView;
 
 /**
  * Created by Administrator on 2016/9/13 0013.
  */
-public class RecommendFragment extends Fragment   implements OnLoadMoreListener {
+public class YuLeFragment extends Fragment   implements OnLoadMoreListener {
 
 
     @BindView(R.id.swipe_target)
     RecyclerView mSwipeTarget;
 
-    SmallVideoAdapter mSmallVideoAdapter;
+    YuLeAdapter mYuLeAdapter;
 
     @BindView(R.id.swipe_load_more_footer)
     LoadMoreFootView mSwipeLoadMoreFooter;
     @BindView(R.id.swipeToLoadLayout)
     SwipeToLoadLayout mSwipeToLoadLayout;
-    int start = 0;  //当前是第几页
 
-    private Integer type;   // 0: #娱乐  1:推荐
 
-    private List<SmallVideoBean.DataBean.ListBean> mListBeen = new ArrayList<SmallVideoBean.DataBean.ListBean>();
+
+    private List<YuLeBean.DataBean> mListBeen = new ArrayList<YuLeBean.DataBean>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        type=getArguments().getInt("type");
         super.onCreate(savedInstanceState);
     }
 
-    public static final RecommendFragment newInstance(Integer types) {
-        RecommendFragment fragment = new RecommendFragment();
+    public static final YuLeFragment newInstance(Integer types) {
+        YuLeFragment fragment = new YuLeFragment();
         Bundle bundle = new Bundle();
-        bundle.putInt("type",types);
         fragment.setArguments(bundle);
         return fragment ;
     }
@@ -75,11 +74,11 @@ public class RecommendFragment extends Fragment   implements OnLoadMoreListener 
         mSwipeToLoadLayout.setOnLoadMoreListener(this);
 
 
-        mSmallVideoAdapter=new SmallVideoAdapter(getActivity());
+        mYuLeAdapter=new YuLeAdapter(getActivity());
         mSwipeTarget.setLayoutManager(new GridLayoutManager(getActivity(),2) );
-        mSwipeTarget.setAdapter(mSmallVideoAdapter);
+        mSwipeTarget.setAdapter(mYuLeAdapter);
 
-        mSmallVideoAdapter.setOnItemClickListener(new SmallVideoAdapter.OnItemClickListener() {
+        mYuLeAdapter.setOnItemClickListener(new YuLeAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
 
@@ -88,11 +87,7 @@ public class RecommendFragment extends Fragment   implements OnLoadMoreListener 
                 startActivity(intent);
             }
         });
-        if(type== 0){
-            get_YUleVideos(0);
-        }else{
-            get_MoreVideos(0);
-        }
+        get_YUleVideos(0);
         return view;
     }
 
@@ -108,52 +103,10 @@ public class RecommendFragment extends Fragment   implements OnLoadMoreListener 
 
     @Override
     public void onLoadMore() {
-        start=start+20;
-        if(type== 0){
-            get_YUleVideos(start);
-        }else{
-            get_MoreVideos(start);
-        }
 
     }
 
 
-    /**
-     * 上拉加载更多
-     */
-    private  void get_MoreVideos(Integer  nowstart){
-        Log.i("zkk---",nowstart  +"");
-        //?tid=2&limit=20&client_sys=android
-        OkHttpUtils
-                .get()
-                .url(Api.SmallVideo)
-                .addParams("offset", nowstart+"")
-                .build()
-                .execute(new StringCallback()
-                {
-
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
-
-                    }
-
-                    @Override
-                    public void onResponse(String response, int id) {
-                        final SmallVideoBean smallVideoBean= JSON.parseObject(response,SmallVideoBean.class);
-                        mListBeen.addAll(smallVideoBean.getData().getList());
-                        Log.i("zkk--"," " + response);
-                        mSwipeToLoadLayout.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                mSwipeToLoadLayout.setLoadingMore(false);
-                                mSmallVideoAdapter.setList(mListBeen);
-                            }
-                        }, 10);
-
-                    }
-                });
-
-    }
 
 
 
@@ -162,7 +115,7 @@ public class RecommendFragment extends Fragment   implements OnLoadMoreListener 
         //?tid=2&limit=20&client_sys=android
         OkHttpUtils
                 .get()
-                .url(Api.YuLeVideo2)
+                .url(Api.YuLeVideo)
                 .addParams("offset", nowstart+"")
                 .build()
                 .execute(new StringCallback()
@@ -175,14 +128,14 @@ public class RecommendFragment extends Fragment   implements OnLoadMoreListener 
 
                     @Override
                     public void onResponse(String response, int id) {
-                        final SmallVideoBean smallVideoBean= JSON.parseObject(response,SmallVideoBean.class);
-                        mListBeen.addAll(smallVideoBean.getData().getList());
+                        final YuLeBean yuLeBean= JSON.parseObject(response,YuLeBean.class);
+                        mListBeen.addAll(yuLeBean.getData());
                         Log.i("zkk--"," " + response);
                         mSwipeToLoadLayout.postDelayed(new Runnable() {
                             @Override
                             public void run() {
                                 mSwipeToLoadLayout.setLoadingMore(false);
-                                mSmallVideoAdapter.setList(mListBeen);
+                                mYuLeAdapter.setList(yuLeBean.getData());
                             }
                         }, 10);
 
