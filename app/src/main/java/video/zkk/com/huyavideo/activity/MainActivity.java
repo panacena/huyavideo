@@ -16,6 +16,7 @@ import video.zkk.com.huyavideo.R;
 import video.zkk.com.huyavideo.fragment.home.HomeFragment;
 import video.zkk.com.huyavideo.fragment.like.LikeFragment;
 import video.zkk.com.huyavideo.fragment.my.MyFragment;
+import video.zkk.com.huyavideo.fragment.smallvideo.SmallVideoFragment;
 
 /**
  * Created by Administrator on 2016/9/13 0013.
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FrameLayout frame_container;
 
     HomeFragment mHomeFragment;
-    LikeFragment mLikeFragment;
+    SmallVideoFragment smallVideoFragment;
     MyFragment mMyFragment;
     private FragmentManager fm;
     private FragmentTransaction ft;
@@ -68,10 +69,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void change_LikeFragment(){
         navigation_bar_like.setSelected(true);
         ft=fm.beginTransaction();
-        if(mLikeFragment==null){
-            mLikeFragment=new LikeFragment();
+        if(smallVideoFragment==null){
+            smallVideoFragment=new SmallVideoFragment();
         }
-        ft.replace(R.id.frame_container, mLikeFragment);
+        ft.replace(R.id.frame_container, smallVideoFragment);
         ft.commit();
     }
 
