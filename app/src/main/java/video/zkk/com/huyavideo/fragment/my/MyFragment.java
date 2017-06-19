@@ -7,13 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import butterknife.ButterKnife;
 import video.zkk.com.huyavideo.R;
 
 /**
  * Created by Administrator on 2016/9/13 0013.
  */
 public class MyFragment extends Fragment {
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,7 +23,8 @@ public class MyFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.frament_my, container,false);
+        View view=inflater.inflate(R.layout.frament_smallvideo, container,false);
+        ButterKnife.bind(this, view);
         return view;
     }
 

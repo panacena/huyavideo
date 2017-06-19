@@ -63,7 +63,7 @@ public class LikeFragment extends Fragment   implements OnLoadMoreListener {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frament_smallvideo, container, false);
+        View view = inflater.inflate(R.layout.frament_smallvideo2, container, false);
         ButterKnife.bind(this, view);
 
         mSwipeToLoadLayout.setOnLoadMoreListener(this);

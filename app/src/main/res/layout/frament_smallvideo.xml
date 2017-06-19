@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.aspsine.swipetoloadlayout.SwipeToLoadLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/swipeToLoadLayout"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@id/swipe_target"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"/>
-
-    <video.zkk.com.huyavideo.widget.LoadMoreFootView
-        android:id="@id/swipe_load_more_footer"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/magic_indicator"
         android:layout_width="match_parent"
-        android:textColor="@color/primary_text"
-        android:layout_height="100dp"
-        android:gravity="center"/>
-</com.aspsine.swipetoloadlayout.SwipeToLoadLayout>
+        android:layout_height="40dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>
