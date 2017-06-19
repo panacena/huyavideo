@@ -62,6 +62,8 @@ public class SmallVideoAdapter extends RecyclerView.Adapter<SmallVideoAdapter.My
 
         SmallVideoBean.DataBean.ListBean fuliBean = mListBeen.get(position);
         holder.mIvItemFuliImage.setImageURI(fuliBean.getVideo_vertical_cover());
+
+        holder.iv_item_header.setImageURI(fuliBean.getUid_avatar());
         holder.mTvItemFuliTitle.setText(fuliBean.getNickname());
         holder.mTvItemFuliCount.setText(fuliBean.getCate2_name());
 
@@ -99,6 +101,9 @@ public class SmallVideoAdapter extends RecyclerView.Adapter<SmallVideoAdapter.My
         TextView mTvItemFuliCount;
         @BindView(R.id.ll_item_smallvideo)
         LinearLayout ll_item_smallvideo;
+
+        @BindView(R.id.iv_item_header)
+        SimpleDraweeView iv_item_header;
 
         public MyItemSmallVideoHoler(View itemView) {
             super(itemView);

@@ -19,23 +19,36 @@
         android:layout_gravity="center"
         app:placeholderImage="@drawable/loading_icon_default"
         app:placeholderImageScaleType="fitXY"
+        app:roundedCornerRadius="5dp"
         app:viewAspectRatio="1.0"/>
 
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="10.0dip">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_item_header"
+            android:layout_width="20dip"
+            android:layout_height="20dip"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            app:actualImageScaleType="fitXY"
+            app:placeholderImageScaleType="fitXY"
+            android:layout_marginLeft="3dp"
+            app:roundedCornerRadius="20dp" />
 
         <TextView
             android:id="@+id/tv_item_fuli_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginLeft="3dp"
+            android:layout_toRightOf="@+id/iv_item_header"
             android:text="MC"
-            android:textColor="@color/primary_text"
-            android:textSize="16sp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"/>
+            android:textColor="@color/color_383838"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/tv_item_fuli_count"
@@ -46,8 +59,8 @@
             android:layout_marginEnd="13dp"
             android:layout_marginRight="10dip"
             android:text="#户外"
-            android:textColor="@color/black_info_title"
-            android:textSize="12sp"/>
+            android:textColor="@color/color_fe362d"
+            android:textSize="12sp" />
 
     </RelativeLayout>
 
