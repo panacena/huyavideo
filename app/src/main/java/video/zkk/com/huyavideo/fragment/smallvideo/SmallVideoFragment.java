@@ -66,7 +66,7 @@ public class SmallVideoFragment extends Fragment {
         mFragmentList.add(RecommendFragment.newInstance(0));
         mFragmentList.add(RecommendFragment.newInstance(1));
         mFragmentList.add(new ShengHuoYuLeFragment());
-        mFragmentList.add(RecommendFragment.newInstance(1));
+        mFragmentList.add(new WeiShikeFragment());
         mFragmentList.add(RecommendFragment.newInstance(1));
         mFragmentList.add(RecommendFragment.newInstance(1));
 

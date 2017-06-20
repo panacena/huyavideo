@@ -35,4 +35,9 @@ public class Api {
 
 
     public   static String  SmallVideoUrl="https://vmobile.douyu.com/video/getInfo";
+
+
+
+    //微时刻
+    public   static String  WeiShiKeVideoUrl="https://apiv2.douyucdn.cn/Video/Video/getCate1VideoList1?cate1_id=4&limit=20&action=hot&client_sys=android";
 }
