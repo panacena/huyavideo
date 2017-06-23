@@ -46,6 +46,7 @@ public class HomeFragment extends Fragment {
         ButterKnife.bind(this,view) ;
 
         mFragmentList.add(new MeizhiFragment());
+        mFragmentList.add(new ErciyuanFragment());
         mFragmentList.add(new FuliFragment());
         mFragmentList.add(new XiusekexueFragment());
         mFragmentList.add(new ZhaiwuFragment());
@@ -56,7 +57,7 @@ public class HomeFragment extends Fragment {
         view_pager.setAdapter(mAdapter);
         tableLayout.setupWithViewPager(view_pager);
         tableLayout.setTabMode(TabLayout.MODE_FIXED);
-        view_pager.setOffscreenPageLimit(3);
+        view_pager.setOffscreenPageLimit(4);
 
         return view;
     }
@@ -64,7 +65,7 @@ public class HomeFragment extends Fragment {
 
 
     private class ApnFragmentAdapter extends FragmentPagerAdapter {
-        CharSequence[] TITLE = new CharSequence[]{"推荐","每日福利","羞涩科学","宅舞"};
+        CharSequence[] TITLE = new CharSequence[]{"推荐","二次元","每日福利","羞涩科学","宅舞"};
 
         public ApnFragmentAdapter(FragmentManager fm) {
             super(fm);

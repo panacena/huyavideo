@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.home.VideoActivity" android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".activity.live.HuoShanLiveActivity" android:configChanges="orientation|keyboardHidden|screenSize" />
 
 
         <activity android:name=".activity.smallvideo.SmallVideoActivity" android:configChanges="orientation|keyboardHidden|screenSize" />

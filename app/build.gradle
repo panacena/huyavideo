@@ -69,7 +69,7 @@ dependencies {
 
     compile 'com.alibaba:fastjson:1.1.57.android'
 
-    compile 'com.dou361.ijkplayer:jjdxm-ijkplayer:1.0.5'
+    compile 'com.dou361.ijkplayer:jjdxm-ijkplayer:1.0.6'
 
      compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.6.0'
      compile 'tv.danmaku.ijk.media:ijkplayer-arm64:0.6.0'  //最小版本21

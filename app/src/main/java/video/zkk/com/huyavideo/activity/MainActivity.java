@@ -15,6 +15,7 @@ import butterknife.ButterKnife;
 import video.zkk.com.huyavideo.R;
 import video.zkk.com.huyavideo.fragment.home.HomeFragment;
 import video.zkk.com.huyavideo.fragment.like.LikeFragment;
+import video.zkk.com.huyavideo.fragment.live.LiveFragment;
 import video.zkk.com.huyavideo.fragment.my.MyFragment;
 import video.zkk.com.huyavideo.fragment.smallvideo.SmallVideoFragment;
 
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     HomeFragment mHomeFragment;
     SmallVideoFragment smallVideoFragment;
-    MyFragment mMyFragment;
+    LiveFragment mLiveFragment;
     private FragmentManager fm;
     private FragmentTransaction ft;
 
@@ -79,10 +80,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void change_MyFragment(){
         navigation_bar_my.setSelected(true);
         ft=fm.beginTransaction();
-        if(mMyFragment==null){
-            mMyFragment=new MyFragment();
+        if(mLiveFragment==null){
+            mLiveFragment=new LiveFragment();
         }
-        ft.replace(R.id.frame_container, mMyFragment);
+        ft.replace(R.id.frame_container, mLiveFragment);
         ft.commit();
     }
 
