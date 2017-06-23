@@ -23,7 +23,7 @@ public class RefreshHeaderView extends TextView implements SwipeRefreshTrigger, 
 
     @Override
     public void onRefresh() {
-        setText("下拉加载更多...");
+        setText("下加载中...");
     }
 
     @Override
@@ -39,8 +39,6 @@ public class RefreshHeaderView extends TextView implements SwipeRefreshTrigger, 
             } else {
                 setText("下拉加载更多...");
             }
-        } else {
-            setText("加载中...");
         }
     }
 
@@ -50,7 +48,7 @@ public class RefreshHeaderView extends TextView implements SwipeRefreshTrigger, 
 
     @Override
     public void onComplete() {
-        setText("加载完成那!");
+        setText("加载完成!");
     }
 
     @Override

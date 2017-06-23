@@ -116,7 +116,7 @@ public class WeiShikeFragment extends Fragment implements OnRefreshListener,OnLo
 
                 OkHttpUtils
                         .get()
-                        .url(Api.ShengHuoYuLeWuDao)
+                        .url(Api.WeiShiKeVideoUrl)
                         .addParams("offset", "0")
                         .build()
                         .execute(new StringCallback()

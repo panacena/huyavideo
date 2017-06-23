@@ -46,7 +46,7 @@ public class SmallVideoFragment extends Fragment {
     SmallVideoFragmentAdapter smallVideoFragmentAdapter;
 
     private List<Fragment>  mFragmentList =  new ArrayList<Fragment>();
-    private static final String[] CHANNELS = new String[]{"推荐","游戏竞技","户外趣玩","生活娱乐","直播录像","微时刻"};
+    private static final String[] CHANNELS = new String[]{"推荐","火山小视频", "游戏竞技","户外趣玩","生活娱乐","直播录像","微时刻"};
     private List<String> mDataList = Arrays.asList(CHANNELS);
 
 
@@ -64,7 +64,7 @@ public class SmallVideoFragment extends Fragment {
 
 
         mFragmentList.add(RecommendFragment.newInstance(0));
-        mFragmentList.add(RecommendFragment.newInstance(1));
+        mFragmentList.add(HuoShanVideoFragment.newInstance(0));
         mFragmentList.add(new ShengHuoYuLeFragment());
         mFragmentList.add(new WeiShikeFragment());
         mFragmentList.add(RecommendFragment.newInstance(1));

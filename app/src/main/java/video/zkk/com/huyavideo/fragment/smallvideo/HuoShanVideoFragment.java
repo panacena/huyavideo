@@ -25,22 +25,25 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
 import video.zkk.com.huyavideo.R;
+import video.zkk.com.huyavideo.activity.live.HuoShanLiveActivity;
 import video.zkk.com.huyavideo.activity.smallvideo.SmallVideoActivity;
+import video.zkk.com.huyavideo.adapter.smallvideo.HuoShanVideoAdapter;
 import video.zkk.com.huyavideo.adapter.smallvideo.SmallVideoAdapter;
 import video.zkk.com.huyavideo.api.Api;
+import video.zkk.com.huyavideo.bean.smallvideo.HuoShanVideoBean;
 import video.zkk.com.huyavideo.bean.smallvideo.SmallVideoBean;
 import video.zkk.com.huyavideo.widget.LoadMoreFootView;
 
 /**
  * Created by Administrator on 2016/9/13 0013.
  */
-public class RecommendFragment extends Fragment   implements OnLoadMoreListener {
+public class HuoShanVideoFragment extends Fragment   implements OnLoadMoreListener {
 
 
     @BindView(R.id.swipe_target)
     RecyclerView mSwipeTarget;
 
-    SmallVideoAdapter mSmallVideoAdapter;
+    HuoShanVideoAdapter mHuoShanLiveAdapter;
 
     @BindView(R.id.swipe_load_more_footer)
     LoadMoreFootView mSwipeLoadMoreFooter;
@@ -48,18 +51,16 @@ public class RecommendFragment extends Fragment   implements OnLoadMoreListener 
     SwipeToLoadLayout mSwipeToLoadLayout;
     int start = 0;  //当前是第几页
 
-    private Integer type;   // 0: #娱乐  1:推荐
 
-    private List<SmallVideoBean.DataBean.ListBean> mListBeen = new ArrayList<SmallVideoBean.DataBean.ListBean>();
+    private List<HuoShanVideoBean.DataBeanX> mListBeen = new ArrayList<HuoShanVideoBean.DataBeanX>();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        type=getArguments().getInt("type");
         super.onCreate(savedInstanceState);
     }
 
-    public static final RecommendFragment newInstance(Integer types) {
-        RecommendFragment fragment = new RecommendFragment();
+    public static final HuoShanVideoFragment newInstance(Integer types) {
+        HuoShanVideoFragment fragment = new HuoShanVideoFragment();
         Bundle bundle = new Bundle();
         bundle.putInt("type",types);
         fragment.setArguments(bundle);
@@ -75,24 +76,21 @@ public class RecommendFragment extends Fragment   implements OnLoadMoreListener 
         mSwipeToLoadLayout.setOnLoadMoreListener(this);
 
 
-        mSmallVideoAdapter=new SmallVideoAdapter(getActivity());
+        mHuoShanLiveAdapter=new HuoShanVideoAdapter(getActivity());
         mSwipeTarget.setLayoutManager(new GridLayoutManager(getActivity(),2) );
-        mSwipeTarget.setAdapter(mSmallVideoAdapter);
+        mSwipeTarget.setAdapter(mHuoShanLiveAdapter);
 
-        mSmallVideoAdapter.setOnItemClickListener(new SmallVideoAdapter.OnItemClickListener() {
+        mHuoShanLiveAdapter.setOnItemClickListener(new HuoShanVideoAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
 
-                Intent intent=new Intent(getActivity(), SmallVideoActivity.class);
-                intent.putExtra("videoId",mListBeen.get(position).getHash_id());
+                Intent intent=new Intent(getActivity(), HuoShanLiveActivity.class);
+                intent.putExtra("videoUrl",mListBeen.get(position).getData().getVideo().getUrl_list().get(1).replaceAll("https","http")
+                        +".mp4");
                 startActivity(intent);
             }
         });
-        if(type== 0){
-            get_YUleVideos(0);
-        }else{
-            get_MoreVideos(0);
-        }
+        get_YUleVideos(0);
         return view;
     }
 
@@ -109,58 +107,16 @@ public class RecommendFragment extends Fragment   implements OnLoadMoreListener 
     @Override
     public void onLoadMore() {
         start=start+20;
-        if(type== 0){
-            get_YUleVideos(start);
-        }else{
-            get_MoreVideos(start);
-        }
-
+       get_YUleVideos(start);
     }
 
 
-    private  void get_MoreVideos(Integer  nowstart){
+   private  void get_YUleVideos(Integer  nowstart){
         Log.i("zkk---",nowstart  +"");
         //?tid=2&limit=20&client_sys=android
         OkHttpUtils
                 .get()
-                .url(Api.DouYuVideo)
-                .addParams("offset", nowstart+"")
-                .build()
-                .execute(new StringCallback()
-                {
-
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
-
-                    }
-
-                    @Override
-                    public void onResponse(String response, int id) {
-                        final SmallVideoBean smallVideoBean= JSON.parseObject(response,SmallVideoBean.class);
-                        mListBeen.addAll(smallVideoBean.getData().getList());
-                        Log.i("zkk--"," " + response);
-                        mSwipeToLoadLayout.postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                mSwipeToLoadLayout.setLoadingMore(false);
-                                mSmallVideoAdapter.setList(mListBeen);
-                            }
-                        }, 10);
-
-                    }
-                });
-
-    }
-
-
-
-    private  void get_YUleVideos(Integer  nowstart){
-        Log.i("zkk---",nowstart  +"");
-        //?tid=2&limit=20&client_sys=android
-        OkHttpUtils
-                .get()
-                .url(Api.YuLeVideo2)
-                .addParams("offset", nowstart+"")
+                .url(Api.HuoShanVideo)
                 .build()
                 .execute(new StringCallback()
                 {
@@ -171,14 +127,14 @@ public class RecommendFragment extends Fragment   implements OnLoadMoreListener 
                     }
                     @Override
                     public void onResponse(String response, int id) {
-                        final SmallVideoBean smallVideoBean= JSON.parseObject(response,SmallVideoBean.class);
-                        mListBeen.addAll(smallVideoBean.getData().getList());
+                        final HuoShanVideoBean smallVideoBean= JSON.parseObject(response,HuoShanVideoBean.class);
+                        mListBeen.addAll(smallVideoBean.getData());
                         Log.i("zkk--"," " + response);
                         mSwipeToLoadLayout.postDelayed(new Runnable() {
                             @Override
                             public void run() {
                                 mSwipeToLoadLayout.setLoadingMore(false);
-                                mSmallVideoAdapter.setList(mListBeen);
+                                mHuoShanLiveAdapter.setList(mListBeen);
                             }
                         }, 10);
 

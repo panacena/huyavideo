@@ -33,13 +33,11 @@ public class LoadMoreFootView extends TextView implements SwipeTrigger, SwipeLoa
     @Override
     public void onMove(int yScrolled, boolean isComplete, boolean automatic) {
         if (!isComplete) {
-            if (yScrolled <= -getHeight()+100) {
+            if (yScrolled <= - getHeight()+ 150) {
                 setText("松开加载更多...");
             } else {
                 setText("上拉加载更多...");
             }
-        } else {
-            setText("加载完毕...");
         }
     }
 

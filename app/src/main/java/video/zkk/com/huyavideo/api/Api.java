@@ -40,7 +40,11 @@ public class Api {
     public   static String  SmallVideoUrl="https://vmobile.douyu.com/video/getInfo";
 
 
-    public   static String  HuoShanLiveUrl="https://api.huoshan.com/hotsoon/feed/?type=live&live_source=live_small_picture&min_time=0&count=20&live_sdk_version=230&iid=11367420541&device_id=19583544230&ac=wifi&channel=xiaomi&aid=1112&app_name=live_stream&version_code=230&version_name=2.3.0&device_platform=android&ssmix=a&device_type=Redmi+Note+3&device_brand=Xiaomi&os_api=21&os_version=5.0.2&uuid=869677028810872&openudid=5ed40069e20354be&manifest_version_code=230&resolution=1080*1920&dpi=480&update_version_code=2301";
+    public   static String  HuoShanLiveUrl="https://api.huoshan.com/hotsoon/feed/?type=live&live_source=live_small_picture&min_time=0&count=40&live_sdk_version=230&iid=11367420541&device_id=19583544230&ac=wifi&channel=xiaomi&aid=1112&app_name=live_stream&version_code=230&version_name=2.3.0&device_platform=android&ssmix=a&device_type=Redmi+Note+3&device_brand=Xiaomi&os_api=21&os_version=5.0.2&uuid=869677028810872&openudid=5ed40069e20354be&manifest_version_code=230&resolution=1080*1920&dpi=480&update_version_code=2301";
+
+
+    public   static String  HuoShanVideo="https://hotsoon.snssdk.com/hotsoon/feed/?type=video&min_time=0&count=40&live_sdk_version=223&iid=11084745687&device_id=19583544230&ac=wifi&channel=vivo&aid=1112&app_name=live_stream&version_code=223&version_name=2.2.3&device_platform=android&ssmix=a&device_type=Redmi+Note+3&device_brand=Xiaomi&os_api=21&os_version=5.0.2&uuid=869677028810872&openudid=5ed40069e20354be&manifest_version_code=223&resolution=1080*1920&dpi=480&update_version_code=2230";
+
 
     //微时刻
     public   static String  WeiShiKeVideoUrl="https://apiv2.douyucdn.cn/Video/Video/getCate1VideoList1?cate1_id=4&limit=20&action=hot&client_sys=android";
